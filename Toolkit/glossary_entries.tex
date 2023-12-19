@@ -1,0 +1,53 @@
+% ----- Combined Entries ----- %
+% Argument order: id, acronym, acronym written out, description
+% Create both acronym and glossary entry with linking:
+\newcommand{\newglossaryacronym}[4]{
+    \newacronym{#1acr}{#2}{\acrlong{#1}}
+    \newglossaryentry{#1}{
+        name={#2 (#3)},
+        text={#2},
+        % symbol={#2},
+        short={#2},
+        long={#3},
+        first={#3 (#2)},
+        firstplural={#3\glspluralsuffix~(#2\glspluralsuffix)},
+        description={#4\glsadd{#1acr}}
+    }
+}
+
+% ----- Nomenclature ----- %
+
+\newglossaryentry{detail}{
+    name={detail},
+    text={detail},
+    description={Additional info}}
+}
+
+\newglossaryentry{atomic-mass}{
+    name={atomic-mass},
+    text={atomic-mass},
+    description={Mass of an atom}}
+}
+
+% ----- Detailed Acronyms, they show up in the nomenclature ----- %
+
+\newglossaryacronym{SRT}{SRT}{Special Relativity Theory}{
+    Special Relativity Theory
+}
+
+% ----- Acronyms ----- %
+
+\newacronym{}{}{}
+
+% ----- Symbols ----- %
+
+\newglossaryentry{M}{
+    type=\symboltype,
+    sort={M},
+    name={\(\mathbf{ M }\)},
+    text={Mass},
+    symbol={\(M\)},
+    description={Mass. Unit: \unit{\kilogram}}
+}
+
+\glsenableentrycount                             % Enable ref counting when displaying, adds some compile time to the document

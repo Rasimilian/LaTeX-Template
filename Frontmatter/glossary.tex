@@ -1,0 +1,16 @@
+% Output ----------------------------------------------------------------------------------------------------
+% for different styles see: https://www.dickimaw-books.com/gallery/glossaries-styles/
+
+\addchap{Glossary}
+\glsnogroupskiptrue
+% \glsaddall                                       % for testing only, remove at some point
+\setacronymstyle{long-short}                     % First use displays the long form, subsequent uses display the short form
+\let\Oldglsnamefont\glsnamefont
+\renewcommand{\glsnamefont}[1]{\makefirstuc{#1}} % capitalize first letter in each entry
+\printnoidxglossary[title=Nomenclature]          % print the nomenclature glossary
+
+\let\glsnamefont\Oldglsnamefont                  % undo first letter capitalization rule
+\printnoidxglossary[type=\acronymtype]           % print the acronyms glossary
+\printnoidxglossary[type=\symboltype]            % print the symbols glossary
+
+\glsresetall                                     % reset glossary entries counts after displaying glossary
