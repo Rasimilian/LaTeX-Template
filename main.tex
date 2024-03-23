@@ -30,6 +30,7 @@ headsepline,                                     % Uncomment to get a line under
 
 \setcounter{secnumdepth}{3}                      % Detailing level of section numbering in table of content
 \addbibresource{Bibliography.bib}                % Load the bibliography definitions file
+\bibliographystyle{plain}
 \makenoidxglossaries                             % Prepare the glossary entries (does not display yet)
 
 % ----- FRONTMATTER ----- %
@@ -65,13 +66,13 @@ headsepline,                                     % Uncomment to get a line under
 \EnableChapterthumb                              % Start displaying chapterthumbs in the mainmatter
 
 \include{Toolkit/chapterstyle.tex}               % Custom chapter style for the mainmatter
-\include{Chapters/Theory}
+\include{Chapters/Theory.tex}
 
 % ----- APPENDICES ----- %
 
 \appendix                                        % Declare following "chapters" are Appendices
 
-\include{Appendices/AppendixTemplate}
+\include{Appendices/AppendixTemplate.tex}
 
 \DisableChapterthumb                             % So we don't get chapterthumbs in the bibliography
 
