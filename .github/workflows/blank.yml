@@ -17,7 +17,11 @@ jobs:
           pre_compile: "tlmgr update --self && tlmgr update --all"
           latexmk_use_lualatex: true
           root_file: main.tex
-          post_compile: "latexmk -c"
+          post_compile: |
+              "latexmk -c"
+              git add main.log
+              git commit -m "Check log file"
+              git push
 
       - name: Upload document build
         uses: actions/upload-artifact@v3
