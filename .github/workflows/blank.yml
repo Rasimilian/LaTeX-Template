@@ -16,7 +16,9 @@ jobs:
         with:
           pre_compile: "tlmgr update --self && tlmgr update --all"
           latexmk_use_lualatex: true
-          root_file: main.tex
+          root_file: |
+              main.tex
+              main.tex
           post_compile: "latexmk -c"
 
       - name: Upload document build
