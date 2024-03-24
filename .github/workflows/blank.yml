@@ -14,8 +14,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          pre_compile: "tlmgr update --self && tlmgr update --all"
-          latexmk_use_lualatex: true
+          pre_compile: "tlmgr update --self && tlmgr update --all"          
           root_file: |
               main.tex
               main.tex
