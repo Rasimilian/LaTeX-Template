@@ -14,7 +14,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          pre_compile: "tlmgr update --self && tlmgr update --all"
+          pre_compile: "tlmgr update --self"
           latexmk_use_lualatex: true
           args: "-lualatex -file-line-error -interaction=nonstopmode"
           root_file: main.tex
